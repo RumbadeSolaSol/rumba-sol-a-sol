@@ -1,0 +1,387 @@
+/*
+Pasos para programar en CSS
+
+1.- Selector: Es el elemento al que aplicaremos estilos
+2.- Propiedad: Lo que vamos a cambiar
+3.- Valor: El nuevo Valor que va tener
+4.- Propiedad: Valor -> Se le denomina declaracion
+
+al conjinto de Selector + declarasion se le llama regla
+
+*/
+
+                        /*Ajustes Generales*/
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    
+ 
+    
+}
+                        /*Cuerpo de la pagina*/
+
+body{
+    background: linear-gradient(90deg, rgb(253, 125, 125) 30%, yellow 90%);
+    
+}
+                        /*Menu Fijo*/
+
+nav{
+    position: fixed;
+    background: linear-gradient(orange, yellow);
+    height: 80px;
+    width: 100%;
+    border: 2px solid red;
+    transition: all 0.5s ease;
+
+}
+
+.enlace{
+    position: absolute;
+    padding: 20px 50px;
+}
+.logo{
+    height: 40px;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a{ 
+    color: white;
+    font-size: 20px;
+    padding: 7px 20px;
+    border-radius: 3px;
+}
+
+li a.active,li:hover{
+background-color: red;
+transition: 1s;}
+
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media (max-width: 952px){
+    .enlace{
+        padding-left: 20px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+    
+}
+
+@media (max-width: 858px){
+
+     .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    li a:hover, li a.active{
+        background: none;
+        color: red;
+    }
+    #check:checked ~ ul{
+        left:0;
+    }
+}
+
+
+
+                    /*Logo Inicio*/
+.caja0{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   padding-top: 100px;
+   padding-bottom: 10px;
+}
+
+@media (max-width: 952px){
+
+    .rumba0{
+        width: 200px;
+        height: 113.32px;
+    }
+}
+@media (max-width: 400px){
+
+    .rumba0{
+        width: 100px;
+        height: 56.66px;
+    }
+}
+
+
+
+                    /*Video*/
+
+.cont1{
+    
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.video0{
+    width: 800px;
+    height: 418px;
+       
+}
+
+@media (max-width: 1200px){
+
+    .video0{
+        width: 600px;
+        height: 313.5px;
+    }
+}
+@media (max-width: 400px){
+
+    .video0{
+        width: 300px;
+        height: 156.75px;
+    }
+}
+
+                    /*Paquetes del grupo*/
+
+/*Titulo*/
+
+.titulopaquete{
+    margin-top: 100PX;
+        object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.500);
+    border-radius: 20PX;
+    
+
+}
+
+.titulopaquete p{
+    color: #FFF;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+/*Paquete formato*/
+
+.contenedor1 {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    justify-items: start;
+    grid-template-areas:
+      "contenedor1texto contenedor1texto espacio1 espacio1"
+      "contenedor1texto contenedor1texto contenedor1foto contenedor1foto"
+      "contenedor1texto contenedor1texto contenedor1foto contenedor1foto"
+      "espacio2 espacio2 contenedor1foto contenedor1foto";
+  }
+  
+  .espacio1 {
+    justify-self: start;
+    align-self: end;
+    grid-area: espacio1;
+    width: 500px;
+    height: 30px;
+  }
+  
+  .espacio2 {
+    justify-self: end;
+    align-self: start;
+    grid-area: espacio2;
+    width: 500px;
+    height: 30px;
+  }
+  
+  .contenedor1foto {
+    background: rgba(255, 255, 255, 0.693);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: start;
+    grid-area: contenedor1foto;
+    width: 500px;
+    height: 350px;
+    object-fit: cover;
+    
+
+  }
+  
+  .contenedor1texto {
+    justify-self: end;
+    align-self: end;
+    grid-area: contenedor1texto;
+    border-radius: 10px;
+    width: 350px;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.237);
+    padding: 20px 50px 20px 50px;
+    
+ }
+  
+.contenedor1 .contenedor1texto  .renglon{
+    display: flex;
+    color: #FFF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 5px;
+    font-size:x-large;
+}
+
+.rumba1{
+    width: auto;
+    height: 100%;
+    border-radius: 10px;
+    
+}
+/*Paquete formato Responsive*/
+
+@media (max-width: 952px){
+    
+    .contenedor1{
+        margin-top: 50px;
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr 1fr ;
+
+
+    grid-template-areas:
+      "contenedor1texto"
+      "contenedor1foto"
+     }
+      
+
+    .contenedor1foto {
+        width: 400px;
+        height: 280px;
+        justify-self: center; 
+        align-self: start; 
+        grid-area: contenedor1foto;
+    }
+
+    .contenedor1texto {     
+        width: 400px;
+        height: 280px;
+        justify-self: center; 
+        align-self: end; 
+        grid-area: contenedor1texto;
+        padding: 2px 5px 2px 5px;
+        object-fit: cover;
+    }
+
+
+}
+
+                    /*Fotografias*/
+
+                    .grid-item {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                      
+                        background-color: #03afff;
+                        border-radius: 4px;
+                        transition: transform 0.3s ease-in-out;
+                      
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                      }
+                      
+                      .grid-item:hover {
+                        filter: opacity(0.9);
+                        transform: scale(1.04);
+                      }
+                      
+                      .grid-container {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                        grid-auto-rows: minmax(200px, auto);
+                        gap: 20px;
+                        padding: 20px;
+                        grid-auto-flow: dense;
+                      }
+                      
+                      @media (min-width: 600px) {
+                        .wide {
+                          grid-column: span 2;
+                        }
+                      
+                        .tall {
+                          grid-row: span 2;
+                        }
+                      }
+                    /*Boton Whatsapp*/
+.btn-wsp{
+    position:fixed;
+    width: 60px;
+    height:60px;
+    line-height: 60px;
+    bottom:25px;
+    right:25px;
+    background:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center ;
+    font-size: 40px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,50);
+    z-index:100;
+    transition: all 300ms ease;
+}
+
+
+.btn-wsp:hover{
+    background: #20ba5a;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+    .btn-wsp{
+        width:63px;
+        height:63px;
+        line-height: 66px;
+	}
+}
